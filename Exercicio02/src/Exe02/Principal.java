@@ -21,14 +21,13 @@ public class Principal {
 		
 		System.out.println(valor);
 		
+		System.out.println();
 		System.out.println("Informe a Porcentagem do aumento do funcionario:");
-		valor.aumento = sc.nextDouble();
+		double aumento = sc.nextDouble();
+		valor.incremento(aumento);
 		
-		System.out.println("Seu novo salario é: " + valor.total);
-		
-		
-		System.out.println(valor);
-		
+		System.out.println();
+		System.out.println("Atualização: " +  valor);
 		
 		sc.close();
 	}

@@ -4,16 +4,14 @@ public class Atributos {
 	public String nome;
 	public double salario;
 	public double imposto;
-	public double aumento;
-	public double total;
 	
 	public double salario_liquido() {
 		return salario - imposto;
 	}
 	
 	
-	public void incremento() {
-		total = salario * aumento / 100.0;
+	public void incremento(double aumento) {
+		salario += salario * aumento / 100.0;
 	}
 	
 	public String toString() {
