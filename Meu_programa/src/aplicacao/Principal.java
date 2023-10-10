@@ -11,19 +11,35 @@ public class Principal {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		Produtos produtos = new Produtos();
-
 		System.out.println("Informe o Produto: ");
 		System.out.print("Nome: ");
-		produtos.nome = sc.nextLine();
+		String nome = sc.nextLine();
 		System.out.print("Qual o preço: ");
-		produtos.preco = sc.nextDouble();
+		double preco = sc.nextDouble();
 		System.out.print("Qual a quantidade: ");
-		produtos.quantidade = sc.nextInt();
+		int quantidade = sc.nextInt();
 		
+		Produtos produtos = new Produtos(nome, preco, quantidade);	
+		
+		System.out.println();
 		System.out.println(produtos);
+		System.out.println();
+		System.out.println("informe a quantidade do produto que será adicionado ao estoque");
+		quantidade = sc.nextInt();
+		produtos.add_produto(quantidade);
 		
+		System.out.println("Atualização do Estoque: ");
+		System.out.println( produtos);
 		
+		System.out.println();
+		System.out.println("informe a quantidade de produto que será removido do estoque: ");
+		quantidade = sc.nextInt();
+		produtos.remover(quantidade);
+		
+		System.out.println("Atualização do Estoque: ");
+		System.out.println( produtos);
+		
+		System.out.println("OBRIGADO");
 		sc.close();
 	}
 
