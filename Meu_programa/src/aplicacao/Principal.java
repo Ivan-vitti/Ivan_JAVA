@@ -16,16 +16,14 @@ public class Principal {
 		String nome = sc.nextLine();
 		System.out.print("Qual o preço: ");
 		double preco = sc.nextDouble();
-		System.out.print("Qual a quantidade: ");
-		int quantidade = sc.nextInt();
 		
-		Produtos produtos = new Produtos(nome, preco, quantidade);	
+		Produtos produtos = new Produtos(nome, preco );	
 		
 		System.out.println();
 		System.out.println(produtos);
 		System.out.println();
 		System.out.println("informe a quantidade do produto que será adicionado ao estoque");
-		quantidade = sc.nextInt();
+		int quantidade = sc.nextInt();
 		produtos.add_produto(quantidade);
 		
 		System.out.println("Atualização do Estoque: ");
