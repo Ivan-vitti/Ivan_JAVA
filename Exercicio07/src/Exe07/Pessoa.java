@@ -10,13 +10,8 @@ public class Pessoa {
 	private String cpf;
 	private char sexo;
 
-	public Pessoa(int codigo, String nome, int idade, double altura, String cpf, char sexo) {
-		this.codigo = codigo;
-		this.nome = nome;
-		this.idade = idade;
-		this.altura = altura;
-		this.cpf = cpf;
-		this.sexo = sexo;
+	public Pessoa() {
+
 	}
 //--------------------------------------------------------------------------------
 

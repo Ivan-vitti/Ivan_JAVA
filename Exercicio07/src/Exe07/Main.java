@@ -19,6 +19,7 @@ public class Main {
 			System.out.println(" ***** Escolha uma opção *****");
 			System.out.println("1. CADASTRAR PESSOA");
 			System.out.println("2. DADOS PESSOAIS");
+			System.out.println("3. ");
 			System.out.println("0. SAIR");
 
 			int escolha = Validar.ler_menu(sc);
@@ -61,9 +62,16 @@ public class Main {
 					System.out.println("Informe o sexo (M/F): ");
 					char sexo = Validar.ler_sexo(sc);
 
+					Pessoa Nova_pessoa = new Pessoa();
+					Nova_pessoa.setCodigo(codigo);
+					Nova_pessoa.setNome(nome);
+					Nova_pessoa.setIdade(idade);
+					Nova_pessoa.setAltura(altura);
+					Nova_pessoa.setCpf(cpf);
+					Nova_pessoa.setSexo(sexo);
 					
-					Vetor[cont] = new Pessoa(codigo, nome, idade, altura, cpf, sexo);
-
+					Vetor[cont] = Nova_pessoa;		
+					
 					System.out.println("Conta cadastrada com sucesso!");
 					System.out.println("========================================================");
 
@@ -74,15 +82,45 @@ public class Main {
 						cadastroSair = true;
 					}
 				}
-
 				break;
 
 			case 2:
+				System.out.println("********* PESSOAS CADASTRADAS *********");
+				System.out.println("****** DADOS PESSOAIS ******");
+				System.out.println("========================================================");
+				
+				if (cont == 0) {
+			        System.out.println("Nenhuma pessoa cadastrada ainda.");
+			    } else {
+			        System.out.println("Dados das pessoas cadastradas:");
+
+			        for (int i = 0; i < cont; i++) {
+			            System.out.println("Pessoa " + (i + 1) + ":");
+			            System.out.println("Código: " + Vetor[i].getCodigo());
+			            System.out.println("Nome: " + Vetor[i].getNome());
+			            System.out.println("Idade: " + Vetor[i].getIdade());
+			            System.out.println("Altura: " + Vetor[i].getAltura());
+			            System.out.println("CPF: " + Vetor[i].getCpf());
+			            System.out.println("Sexo: " + Vetor[i].getSexo());
+			            System.out.println("========================================================");
+			        }
+			    }		
+				
+				break;
+
+			case 3:
 				System.out.println("========================================================");
 
+				
+				
+				
+				
 				System.out.println("========================================================");
 				break;
 
+				
+				
+				
 			case 0:
 				System.out.println("Saindo do programa.");
 				System.out.println("OBRIGADO.");
